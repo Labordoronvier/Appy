@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple - Get to Know Mac</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f7;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #E2E5DE;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .ipad-lineup {
+            text-align: center;
+        }
+
+        .ipad-lineup h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .ipad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .ipad-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 340px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .ipad-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .ipad-card .description {
+            color: #6e6e73;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .ipad-card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+
+        .ipad-card img {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .ipad-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            font-size: 0.9rem;
+            max-width: 80%;
+        }
+
+        .ipad-card ul li {
+            margin-bottom: 5px;
+        }
+
+        .ipad-card .learn-more {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .ipad-card .learn-more:hover {
+            text-decoration: underline;
+        }
+        .ipad-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            width: 300px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .ipad-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <section class="ipad-lineup">
+            <h2>Explore the lineup.</h2>
+            <div class="ipad-grid">
+                <div class="ipad-card">
+                    <h3>iPad (9th gen)</h3>
+                    <p class="description">The ultimate iPad experience with the most advanced technology.</p>
+                    <p class="price">From $799</p>
+                    <img src="9th.jpeg" alt="9th gen">
+                    <ul class="specs">
+                        <li>13" or 11"</li>
+                        <li>Liquid Retina XDR display</li>
+                        <li>ProMotion technology</li>
+                        <li>P3 wide color</li>
+                        <li>True Tone display</li>
+                        <li>Nano-texture display glass option on 1TB and 2TB models</li>
+                        <li>Apple Intelligence</li>
+                        <li>12MP Wide camera</li>
+                        <li>4K video</li>
+                        <li>LiDAR Scanner</li>
+                        <li>Face ID</li>
+                        <li>Thunderbolt / USB 4</li>
+                    </ul>
+                </div>
+                <div class="ipad-card">
+                    <h3>iPad (10th gen)</h3>
+                    <p class="description">Serious performance in a thin and light design.</p>
+                    <p class="price">From $599</p>
+                    <img src="10th.jpeg" alt="10th gen">
+                    <ul class="specs">
+                        <li>13" or 11"</li>
+                        <li>Liquid Retina display</li>
+                        <li>Anti-reflective screen coating</li>
+                        <li>P3 wide color</li>
+                        <li>True Tone display</li>
+                        <li>Apple Intelligence</li>
+                        <li>12MP Wide camera</li>
+                        <li>4K video</li>
+                        <li>Landscape stereo speakers</li>
+                        <li>Touch ID</li>
+                        <li>USB-C connector</li>
+                        </ul>
+                </div>
+                <div class="ipad-card">
+                    <h3>iPad (11th gen)Pad</h3>
+                    <p class="description">The colorful iPad. Versatile for everything you do every day.</p>
+                    <p class="price">From $449</p>
+                    <img src="11th.jpeg" alt="iPad">
+                    <ul class="specs">
+                        <li>10.9"</li>
+                        <li>Liquid Retina display</li>
+                        <li>True Tone display</li>
+                        <li>sRGB color</li>
+                        <li>Apple Intelligence</li>
+                        <li>12MP Wide camera</li>
+                        <li>4K video</li>
+                        <li>Landscape stereo speakers</li>
+                        <li>Touch ID</li>
+                        <li>USB-C connector</li>
+                        </ul>
+                </div>
+                <div class="ipad-card">
+                    <h3>iPad mini (5th)</h3>
+                    <p class="description">The full iPad experience in a portable design.</p>
+                    <p class="price">From $499</p>
+                    <img src="mini5th.jpeg" alt="mini">
+                        <ul class="specs">
+                        <li>8.3"</li>
+                        <li>Liquid Retina display</li>
+                        <li>P3 wide color</li>
+                        <li>True Tone display</li>
+                        <li>Apple Intelligence</li>
+                        <li>12MP Wide camera</li>
+                        <li>1080p video</li>
+                        <li>Landscape stereo speakers</li>
+                        <li>Touch ID</li>
+                        <li>USB-C connector</li>
+                        </ul>
+                </div>
+                    <div class="ipad-card">
+                        <h3>iPad mini (6th)</h3>
+                        <p class="description">Power and performance with the M3 chip.</p>
+                        <p class="price">From $999</p>
+                        <img src="mini6th.jpeg" alt="mini">
+                        <ul class="specs">
+                            <li>13" or 11"</li>
+                            <li>Liquid Retina XDR display</li>
+                            <li>M3 chip</li>
+                            <li>Face ID</li>
+                            <li>Thunderbolt / USB 4</li>
+                            <li>5G capable</li>
+                        </ul>
+                    </div>
+
+                <div class="ipad-card">
+                    <h3>iPad mini (7th)</h3>
+                    <p class="description">Balanced performance and affordability.</p>
+                    <p class="price">From $499</p>
+                    <img src="mini7th.jpeg" alt="mini">
+                    <ul class="specs">
+                        <li>10.9"</li>
+                        <li>Liquid Retina display</li>
+                        <li>Touch ID</li>
+                        <li>A15 Bionic</li>
+                        <li>USB-C</li>
+                        <li>Apple Intelligence</li>
+                    </ul>
+                </div>
+
+                <div class="ipad-card">
+                    <h3>iPad Air (5th)</h3>
+                    <p class="description">Designed for creators and professionals.</p>
+                    <p class="price">From $1,299</p>
+                    <img src="air5th.jpeg" alt="iPad ">
+                    <ul class="specs">
+                        <li>14.5" Retina display</li>
+                        <li>Apple M2 chip</li>
+                        <li>Face ID</li>
+                        <li>Apple Pencil Pro support</li>
+                        <li>Thunderbolt 4</li>
+                    </ul>
+                </div>
+
+                <div class="ipad-card">
+                    <h3>iPad Air (6th)</h3>
+                    <p class="description">Affordable and compact iPad for everyday use.</p>
+                    <p class="price">From $299</p>
+                    <img src="air6th.jpeg" alt="iPad ">
+                    <ul class="specs">
+                        <li>9.7" Retina display</li>
+                        <li>A14 Bionic</li>
+                        <li>Touch ID</li>
+                        <li>Lightning connector</li>
+                        <li>Apple Intelligence</li>
+                    </ul>
+                </div>
+
+                <div class="ipad-card">
+                    <h3>iPad Air (7th)</h3>
+                    <p class="description">The largest iPad for immersive experiences.</p>
+                    <p class="price">From $1,499</p>
+                    <img src="air7th.jpeg" alt="iPad">
+                    <ul class="specs">
+                        <li>15.2" OLED display</li>
+                        <li>M3 Ultra chip</li>
+                        <li>Face ID</li>
+                        <li>Thunderbolt 5</li>
+                        <li>Dual-camera system</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

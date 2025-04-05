@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Gift Card</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #1d1d1f;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #E2E5DE;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 10px 0;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar input[type="text"]:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gift-card-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gift-card-section .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .gift-card-section .slider img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            flex-shrink: 0;
+            margin: 0 auto;
+        }
+
+        .gift-card-section .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .gift-card-section .slider-control {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gift-card-section .slider-control.active {
+            background-color: #0071e3;
+        }
+
+        .gift-card-section .slider-control:hover {
+            background-color: #aaa;
+        }
+
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product-grid a {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .product-grid a img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .product-grid a img {
+                width: 50px;
+                height: 50px;
+            }
+            .product-grid a {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <h1>For everything<br>and everyone.</h1>
+            <p>The gift card for everything Apple.</p>
+        </header>
+
+        <div class="gift-card-section">
+            <div class="slider">
+                <img src="giftcard1.webp" alt="Apple Gift Card 1">
+                <img src="giftcard2.jpeg" alt="Apple Gift Card 2">
+                <img src="giftcard3.png" alt="Apple Gift Card 3">
+            </div>
+            <div class="slider-controls">
+                <div class="slider-control active"></div>
+                <div class="slider-control"></div>
+                <div class="slider-control"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </main>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        const controls = document.querySelectorAll('.slider-control');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            controls.forEach((control, index) => {
+                control.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        controls.forEach((control, index) => {
+            control.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        setInterval(nextSlide, 5000); 
+    </script>
+</body>
+</html>

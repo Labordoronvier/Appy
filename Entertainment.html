@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple - Entertainment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            color: #E2E5DE;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .sidebar img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        header {
+            text-align: center;
+            padding: 120px 20px;
+            margin-left: 220px; 
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+
+        .apple-one-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            margin-left: 220px; 
+            box-sizing: border-box;
+        }
+
+        .apple-one-section p {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .apple-one-section a {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .apple-one-section a:hover {
+            text-decoration: underline;
+        }
+
+        .tv-plus-section {
+            padding: 60px 20px;
+            text-align: center;
+            margin-left: 220px; 
+            box-sizing: border-box;
+        }
+
+        .tv-plus-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+
+        .tv-shows {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tv-shows img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: none; 
+        }
+
+        .tv-shows img.active {
+            display: block; 
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .tv-shows-controls {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tv-shows-controls button {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .tv-shows-controls button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .tv-shows-controls .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tv-shows-controls .indicator.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            margin-left: 220px; 
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .tv-shows {
+                max-width: 100%;
+            }
+
+            header, .apple-one-section, .tv-plus-section, footer{
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+    
+    <header>
+        <h1>Meet the A-list of
+            entertainment.</h1>
+        <p>
+            Award-winning movies. Binge-worthy shows. Your favorite music mastered in
+            Spatial Audio. The most epic collection of mobile games. And the world's largest
+            library of 4K Ultra HD fitness content. The best entertainment and experiences
+            live here — only on Apple.
+        </p>
+    </header>
+
+    <main>
+        <section class="apple-one-section">
+            <p>
+                Get up to six services in one subscription with Apple One.
+            </p>
+            <a href="#">Learn more</a>
+        </section>
+
+        <section class="tv-plus-section">
+            <h2>Apple TV+</h2>
+            <div class="tv-shows">
+                <img src="Shrinking.jpeg" alt="Shrinking" class="active">
+                <img src="Fly Me to the Moon.jpeg" alt="Fly Me to the Moon">
+                <img src="ietnam Wars.jpeg" alt="Vietnam Wars">
+                <img src="Slow Horses.jpeg" alt="Slow Horses">
+                <img src="Bearbrick.jpeg" alt="Bearbrick">
+                <img src="Berlin.jpeg" alt="Berlin">
+                <img src="Bad Sisters.jpeg" alt="Bad Sisters">
+                <img src="Disclaimer.jpeg" alt="Disclaimer">
+            </div>
+            <div class="tv-shows-controls">
+                <button id="prev-button">Previous</button>
+                <div id="image-indicators" class="indicator-container"></div>
+                <button id="next-button">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Apple Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.tv-shows img');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const imageIndicatorsContainer = document.getElementById('image-indicators');
+        let currentImageIndex = 0;
+        let intervalId;
+
+        function showImage(index) {
+            images.forEach((image, i) => {
+                image.classList.remove('active');
+                if (i === index) {
+                    image.classList.add('active');
+                }
+            });
+            updateIndicators(index);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function updateIndicators(index) {
+            imageIndicatorsContainer.innerHTML = '';
+            images.forEach((_, i) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (i === index) {
+                    indicator.classList.add('active');
+                }
+                indicator.addEventListener('click', () => {
+                    showImage(i);
+                    currentImageIndex = i;
+                    clearInterval(intervalId);
+                    startSlideshow();
+                });
+                imageIndicatorsContainer.appendChild(indicator);
+            });
+        }
+
+        function startSlideshow() {
+            intervalId = setInterval(nextImage, 2000); 
+        }
+
+        prevButton.addEventListener('click', () => {
+            prevImage();
+            clearInterval(intervalId);
+            startSlideshow();
+        });
+
+        nextButton.addEventListener('click', () => {
+            nextImage();
+            clearInterval(intervalId);
+            startSlideshow();
+        });
+
+        showImage(currentImageIndex);
+        startSlideshow();
+    </script>
+</body>
+</html>

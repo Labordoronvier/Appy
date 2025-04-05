@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            color: #E2E5DE;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .sidebar img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+
+        main {
+            padding: 20px;
+            margin-left: 220px;
+            box-sizing: border-box; 
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container input[type="text"] {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .search-container input[type="text"]:focus {
+            outline: none;
+            border-color: #0071e3;
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+
+
+        .browse-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .browse-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .browse-links a {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .browse-links a:hover {
+            text-decoration: underline;
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .category-circle:hover {
+            background-color: #e0e0e0;
+            border-color: #0071e3;
+        }
+
+        .featured-accessories {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .featured-accessories h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .show-more {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .show-more a{
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .show-more a:hover {
+             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .product-categories {
+                gap: 20px;
+            }
+            .category-circle {
+                width: 90px;
+                height: 90px;
+                font-size: 12px;
+            }
+            .product-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card{
+                width: 100%;
+                max-width: 400px;
+            }
+            .browse-links a{
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 480px){
+            .category-circle{
+                width: 80px;
+                height: 80px;
+                font-size: 10px;
+            }
+            header{
+                padding: 10px;
+            }
+            main{
+                padding: 10px;
+            }
+            .featured-accessories h2{
+                font-size: 20px;
+            }
+            .browse-links{
+                flex-direction: column;
+            }
+            .browse-section h2{
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+    <header>
+        <h1>Accessories</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search accessories">
+        </div>
+
+        <section class="browse-section">
+            <h2>Browse by Product</h2>
+            <div class="browse-links">
+                <a>Browse by Product</a>
+                <a>Browse by Category</a>
+            </div>
+        </section>
+
+        <section class="product-categories">
+            <a href="MacAccessories.html" class="category-circle">Mac</a>
+            <a href="iPadAccessories.html" class="category-circle">iPad</a>
+            <a href="iPhoneAccessories.html" class="category-circle">iPhone</a>
+            <a href="WatchAccessories.html" class="category-circle">Watch</a>
+            <a href="AVPAccessories.html" class="category-circle">Apple Vision</a>
+        </section>
+
+        <section class="featured-accessories">
+            <h2>Featured iPhone Accessories</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="peony.jpeg" alt="iPhone Case - Peony">
+                    <h3>iPhone 16 Pro Plus Silicone Case with MagSafe - Peony</h3>
+                    <p>MagSafe</p>
+                    <p class="price">$49.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="magsafe.jpeg" alt="iPhone Clear Case">
+                    <h3>iPhone 16 Pro Clear Case with MagSafe</h3>
+                    <p>MagSafe</p>
+                    <p class="price">$49.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="winter blue.jpeg" alt="iPhone Case - Blue">
+                    <h3>iPhone 16 Pro Silicone Case - Winter Blue</h3>
+                    <p></p>
+                    <p class="price">$39.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="MagSafe Charger.jpeg" alt="MagSafe Charger">
+                    <h3>MagSafe Charger</h3>
+                    <p>MagSafe</p>
+                    <p class="price">$39.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="20W USB-C Power Adapter.jpeg" alt="20W USB-C Power Adapter">
+                    <h3>20W USB-C Power Adapter</h3>
+                    <p></p>
+                    <p class="price">$19.00</p>
+                </div>
+                 <div class="product-card">
+                    <img src="AirPods (3st generation).webp" alt="AirPods">
+                    <h3>AirPods (3rd generation)</h3>
+                    <p>With Lightning Charging Case</p>
+                    <p class="price">$169.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="AirPods_Pro_(2nd_generation).webp" alt="AirPods Pro">
+                    <h3>AirPods Pro (2nd generation)</h3>
+                    <p>With USB-C Charging Case</p>
+                    <p class="price">$249.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="AirPods_Max.webp" alt="AirPods Max">
+                    <h3>AirPods Max</h3>
+                    <p></p>
+                    <p class="price">$549.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Apple Watch Ultra Case (49mm).jpeg" alt="Apple Watch Case">
+                    <h3>Apple Watch Ultra Case (49mm)</h3>
+                    <p></p>
+                    <p class="price">$79.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="USB-C Charge Cable (1m).jpeg" alt="USB-C Charge Cable">
+                    <h3>USB-C Charge Cable (1m)</h3>
+                    <p></p>
+                    <p class="price">$19.00</p>
+                </div>
+                 <div class="product-card">
+                    <img src="Apple Pencil (USB-C).png" alt="Apple Pencil">
+                    <h3>Apple Pencil (USB-C)</h3>
+                    <p></p>
+                    <p class="price">$79.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Magic Keyboard Folio for iPad.jpeg" alt="Magic Keyboard Folio">
+                    <h3>Magic Keyboard Folio for iPad</h3>
+                    <p></p>
+                    <p class="price">$249.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Smart Folio for iPad (Blue).png" alt="Smart Folio">
+                    <h3>Smart Folio for iPad (Blue)</h3>
+                    <p></p>
+                    <p class="price">$79.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Periwinkle Sport Loop.jpeg" alt="Periwinkle Sport Loop">
+                    <h3>Periwinkle Sport Loop</h3>
+                    <p></p>
+                    <p class="price">$49.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Tangerine Sport Band.jpeg" alt="Tangerine Sport Band">
+                    <h3>Tangerine Sport Band</h3>
+                    <p></p>
+                    <p class="price">$49.00</p>
+                </div>
+                <div class="product-card">
+                    <img src="Gold Link Bracelet.jpeg" alt="Gold Link Bracelet">
+                    <h3>Gold Link Bracelet</h3>
+                    <p></p>
+                    <p class="price">$349.00</p>
+                </div>
+            </div>
+        </section>
+        <div class="show-more">
+            <a href="#">Show more</a>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('search-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                let destination = '';
+                if (searchTerm.includes('mac')) {
+                    destination = 'MacAccessories.html';
+                } else if (searchTerm.includes('ipad')) {
+                    destination = 'iPadAccessories.html';
+                } else if (searchTerm.includes('iphone')) {
+                    destination = 'iPhoneAccessories.html';
+                } else if (searchTerm.includes('watch')) {
+                    destination = 'WatchAccessories.html';
+                } else if (searchTerm.includes('vision pro') || searchTerm.includes('apple vision pro')) {
+                    destination = 'AVPAccessories.html';
+                } else {
+                    alert('No matching accessories found. Please try a different search term.');
+                    return; 
+                }
+                window.location.href = destination;
+            }
+        });
+    </script>
+</body>
+</html>

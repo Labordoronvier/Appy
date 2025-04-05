@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Repair</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #1d1d1f;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #E2E5DE;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-left: 240px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        main {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1em;
+            margin-bottom: 16px;
+        }
+
+        .options-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .option-card h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .option-card p {
+            font-size: 0.9em;
+            margin-bottom: 16px;
+        }
+
+        .option-card a {
+            display: inline-block;
+            background-color: #0071e3;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .option-card a:hover {
+            background-color: #004080;
+        }
+
+        .additional-options {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+        }
+
+        .additional-options h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .additional-options p {
+            font-size: 0.9em;
+            margin-bottom: 16px;
+        }
+
+        .self-service-repair {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+        }
+
+         .self-service-repair h3{
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+         }
+
+        .self-service-repair p{
+            font-size: 0.9em;
+            margin-bottom: 16px;
+        }
+
+        .support-options-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin-left: 0;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 1.2em;
+            }
+
+            section p {
+                font-size: 0.9em;
+            }
+
+            .options-grid {
+                flex-direction: column;
+            }
+
+            .option-card {
+                min-width: auto;
+                max-width: none;
+                margin-bottom: 20px;
+            }
+
+            .support-options-container {
+                flex-direction: column;
+            }
+            .self-service-repair {
+                margin-top: 20px;
+            }
+             .sidebar {
+                position: relative;
+                height: auto;
+                overflow-y: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Apple Repair</h1>
+            <p>We're here to help. Apple-certified repairs are performed by trusted experts who use genuine Apple parts. Only Apple-certified repairs are backed by Apple. Whichever option you choose, you'll get your product back working exactly the way it should.</p>
+        </header>
+        <main>
+            <section class="options-grid">
+                <div class="option-card">
+                    <h3>Send your product to Apple</h3>
+                    <p>Online or over the phone, we'll arrange shipment for your product to an Apple Repair Center — all on your schedule and without an appointment. This service is available for most Apple products.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div class="option-card">
+                    <h3>Visit a Genius at an Apple Store</h3>
+                    <p>You can do more than shop and learn in an Apple Store. Start a repair request below to make a reservation with a Genius to get help with a hardware repair.</p>
+                    <a href="#">Start a repair</a>
+                </div>
+            </section>
+            <section class="additional-options">
+                <h2>Other Repair Options</h2>
+                <div class="support-options-container">
+                    <div class = "self-service-repair" style="margin-top: 0;">
+                        <h3>Independent Repair Providers</h3>
+                        <p>Independent Repair Providers have access to genuine Apple parts and repair resources. Independent Repair Providers do not provide repairs covered by Apple's warranty or AppleCare plans but may offer their own repair warranty. You can check if a provider is an Independent Repair Provider or an Apple Authorized Service Provider.</p>
+                    </div>
+                    <div class = "self-service-repair" style="margin-top: 0;">
+                        <h3>Self Service Repair</h3>
+                        <p>Self Service Repair is intended for individuals with the knowledge and experience to repair electronic devices. If you are experienced with the complexities of repairing electronic devices, Self Service Repair provides you with access to genuine Apple parts, tools, and repair manuals to perform your own out-of-warranty repair. To learn more, please visit the Self Service Repair page.</p>
+                    </div>
+                </div>
+                <p>*Unless required by law, repairs made by Independent Repair Providers are not backed by Apple. Any damage that your device may incur by a non-Apple authorized repair provider is not covered by Apple's Limited Warranty or an AppleCare plan.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Account Recovery</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #1d1d1f;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #E2E5DE;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 30px;
+            border-radius: 10px;
+
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1em;
+            margin-bottom: 16px;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin-bottom: 16px;
+            font-size: 1em;
+        }
+
+        ol li {
+            margin-bottom: 12px;
+        }
+
+        .video-placeholder {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .text-link {
+            color: #0071e3;
+            text-decoration: none;
+        }
+        .text-link:hover{
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                margin-left: 0;
+            }
+            header h1{
+                font-size: 1.8em;
+            }
+            main {
+                padding: 20px;
+            }
+            section h2 {
+                font-size: 1.2em;
+            }
+            ol li{
+                font-size: 0.9em;
+            }
+            section p{
+                font-size: 0.9em;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                overflow-y: auto;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <header>
+            <h1>If you forgot your Apple Account password</h1>
+            <p>Here's how to reset your Apple Account password and regain access to your account.</p>
+        </header>
+        <main>
+            <section>
+                <p>The easiest way to reset your password is with your iPhone or other trusted Apple device—one that's already signed in to your Apple Account, so that Apple knows that it's yours. You also need a passcode (or password on Mac) set up on that device.</p>
+                <p>Resetting your password on the web when you don't have a trusted device is another way to regain access to your account.</p>
+                <p>Apple ID is now Apple Account. You can still sign in with the same email address or phone number and password.</p>
+            </section>
+            <section>
+                <h2>Reset your Apple Account password on your iPhone</h2>
+                <ol>
+                    <li>Go to Settings.</li>
+                    <li>Tap your name &gt; Sign-In & Security &gt; Change Password.</li>
+                    <li>Follow the onscreen instructions to reset your password.</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Reset your Apple Account password on a different trusted device</h2>
+                <p>You can also follow the iPhone steps on a trusted iPad, Apple Vision Pro, or Apple Watch.</p>
+                <p>To reset your password on your trusted Mac, choose Apple menu  &gt; System Settings &gt; [your name] &gt; Sign-In & Security. Then click Change Password, and follow the onscreen instructions.</p>
+            </section>
+            <section>
+                <h2>Watch a video about how to reset your Apple Account password in Settings on iPhone</h2>
+                <div class="video-placeholder">
+                    Video Placeholder
+                </div>
+            </section>
+            <section>
+                <h2>If you have a new Apple device</h2>
+                <p>If you're not signed in to your Apple Account on an Apple device, you can select "Forgot password or don't have an Apple Account?" during device setup on the Apple Account sign-in screen.</p>
+                <p>After setup, you can reset your password in Settings:</p>
+                <ul>
+                    <li>iPhone or iPad: Go to the Settings &gt; Apple Account. Tap "Sign in manually", and then tap "Forgot password?" and follow the onscreen instructions.</li>
+                    <li>Mac: Choose Apple menu &gt; System Settings. Click Sign in, then click "Forgot password" and follow the onscreen instructions.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Reset your Apple Account password with the Apple Support app on a borrowed device</h2>
+                <p>If you don't have an Apple device but have access to your trusted phone number, you can borrow an Apple device from a friend or family member, or use one at an Apple Store.</p>
+                <ol>
+                    <li>Open the Apple Support app on the borrowed Apple device. If you need to download the Apple Support app, <a href="#" class="text-link">find it in the App Store</a>.</li>
+                    <li>Scroll down to Support Tools, then tap Reset Password.</li>
+                    <li>Tap "Help Someone Else".</li>
+                    <li>Enter your Apple Account email address or phone number.</li>
+                    <li>Tap Continue, and follow the onscreen instructions to reset your password.</li>
+                </ol>
+                <p>Any information that you enter will not be stored on the device.</p>
+            </section>
+
+            <section>
+                <h2>Reset your Apple Account password on the web</h2>
+                <p>You can also regain access to your account by resetting your password on the web. When possible, the web browser will redirect you to a trusted device instead.</p>
+                <p>If you don't have a trusted device, you can still reset your password on the web — but the process may take a little longer. If you'll have access to one of your trusted devices soon, it may be faster and easier to reset your password at that time.</p>
+                <p><a href="#" class="text-link">Reset your password at iforgot.apple.com</a> &gt;</p>
+            </section>
+
+            <section>
+                <h2>Need more help?</h2>
+                <p>Tell us more about what's happening, and we'll suggest what you can do next.</p>
+                <p><a href="#" class="text-link">Get suggestions</a> &gt;</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

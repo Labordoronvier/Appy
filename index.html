@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: #E2E5DE;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #E2E5DE;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 10px 0; 
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar input[type="text"]:focus{
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .main-area {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            margin-top: 20px;
+        }
+
+        .left-area {
+            width: 100%;
+            max-width: 65%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer-section {
+            background-color: #E2E5DE;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .offer-section img {
+            width: 100%;
+            max-height: 300px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .offer-section h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .offer-section p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .offer-section button {
+            background-color: #007bff;
+            color: #E2E5DE;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .offer-section button:hover {
+            background-color: #0056b3;
+        }
+        
+        .offer-section a{
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .product-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        .product {
+            flex: 0 0 auto;
+            width: 45%; 
+            max-width: 200px; 
+            border: 1px solid #E2E5DE;
+            padding: 10px;
+            text-align: center;
+            scroll-snap-align: start;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            max-height: 150px; 
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .product p {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .right-area {
+            width: 100%;
+            max-width: 30%; 
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px; 
+        }
+
+        .recently-viewed, .suggestions {
+            background-color: #E2E5DE;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .recently-viewed h2, .suggestions h2 {
+                margin-top: 0;
+                font-size: 20px;
+        }
+
+        .recently-viewed img, .suggestions img {
+            width: 100%;
+            max-height: 200px; 
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .recently-viewed p, .suggestions p{
+            font-size: 14px;
+
+        }
+        .suggestions a{
+            text-decoration: none;
+            color: black;
+            border-bottom: 1px solid #666;
+            
+        }
+
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .main-area {
+                flex-direction: column;
+            }
+            .left-area, .right-area {
+                width: 100%;      
+                max-width: none; 
+            }
+            .header {
+                flex-direction: column;
+            }
+            .search-bar input[type="text"]{
+                width: 100%;
+            }
+            .product-slider {
+                flex-wrap: nowrap;
+            }
+            .product {
+                width: 80%;
+                min-width: 40%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                overflow-y: visible;
+            }
+             .sidebar ul {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .sidebar li{
+                flex: 0 0 auto;
+                border-bottom: none;
+                border-right: 1px solid #666;
+            }
+            .sidebar li:last-child{
+                border-right: none;
+            }
+            .main-content {
+                padding: 10px;
+            }
+            .product {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="Accessories.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search product">
+            </div>
+
+        </div>
+
+        <div class="main-area">
+            <div class="left-area">
+                <div class="offer-section">
+                    <img src="iphone.png" alt="Offer Image">
+                    <h2>Biggest Offer Revealed</h2>
+                    <p>MORE DEALS INSIDE UP TO 50% OFF</p>
+                    <div class="timer" id="countdown">00:00:00</div>
+                    <button><a href="iPhone.html">Wishlist Now</a></button>
+                </div>
+
+                <div class="product-slider">
+                    <div class="product">
+                        <a href="Mac.html">
+                        <img src="mac.png" alt="Product 1">
+                    </a>
+                        <p>Mac</p>
+                    </div>
+                    <div class="product">
+                        <a href="iPhone.html">
+                        <img src="iphone.png" alt="Product 2">
+                       </a>
+                        <p>iPhone</p>
+                    </div>
+                    <div class="product">
+                         <a href="iPad.html">
+                        <img src="iPad.png" alt="Product 3">
+                        </a>
+                        <p>iPad</p>
+                    </div>
+                    <div class="product">
+                         <a href="Watch.html">
+                        <img src="applewatch.png" alt="Product 4">
+                        </a>
+                        <p>Apple Watch</p>
+                    </div>
+                    <div class="product">
+                         <a href="AirPods.html">
+                        <img src="AirPods.png" alt="Deal 1">
+                        </a>
+                        <p>AirPods</p>
+                    </div>
+                    <div class="product">
+                         <a href="AirTag.html">
+                        <img src="AirTag.png" alt="Deal 2">
+                        </a>
+                        <p>AirTag</p>
+                    </div>
+                    <div class="product">
+                         <a href="TV & Home.html">
+                        <img src="AppleTv.png" alt="Deal 3">
+                        </a>
+                        <p>Apple TV 4K</p>
+                    </div>
+                    <div class="product">
+                         <a href="Accessories.html">
+                        <img src="Accessories.png" alt="Deal 4">
+                        </a>
+                        <p>Accessories</p>
+                    </div>
+                    <div class="product">
+                         <a href="GiftCard.html">
+                        <img src="Gift Card.png" alt="Deal 5">
+                        </a>
+                        <p>Gift Card</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-area">
+                <div class="recently-viewed">
+                    <h2>Recently Viewed</h2>
+                    <img src="macbook.jpeg" alt="Recently Viewed Product">
+                    <p>See your browsing history</p>
+                </div>
+
+                <div class="suggestions">
+                    <h2>Suggestions For You</h2>
+                    <img src="ip16.jpeg" alt="Suggestion Product">
+                    <p><a href="iPhone.html">Watch more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function startCountdown(durationInSeconds) {
+            let timer = durationInSeconds;
+            const countdownElement = document.getElementById('countdown');
+
+            function updateTimerDisplay() {
+                const hours = Math.floor(timer / 3600);
+                const minutes = Math.floor((timer % 3600) / 60);
+                const seconds = timer % 60;
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            updateTimerDisplay();
+
+            const interval = setInterval(() => {
+                if (timer > 0) {
+                    timer--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(interval);
+                    countdownElement.textContent = "Offer Expired";
+                }
+            }, 1000);
+        }
+
+        startCountdown(86400);
+
+        document.getElementById('search-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                if (searchTerm.includes('mac')) {
+                    window.location.href = 'Mac.html';
+                } else if (searchTerm.includes('ipad')) {
+                    window.location.href = 'iPad.html';
+                } else if (searchTerm.includes('iphone')) {
+                    window.location.href = 'iPhone.html';
+                } else if (searchTerm.includes('watch')) {
+                    window.location.href = 'Watch.html';
+                } else if (searchTerm.includes('airpods')) {
+                    window.location.href = 'AirPods.html';
+                } else if (searchTerm.includes('tv & home') || searchTerm.includes('tv & home')) {
+                    window.location.href = 'TV & Home.html';
+                } else if (searchTerm.includes('entertainment')) {
+                    window.location.href = 'Entertainment.html';
+                } else if (searchTerm.includes('accessories')) {
+                    window.location.href = 'Accessories.html';
+                } else if (searchTerm.includes('support')) {
+                    window.location.href = 'Support.html';
+                }else {
+                    alert('No matching products found. Please try a different search term.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

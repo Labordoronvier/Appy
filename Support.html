@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Support</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #808080;
+            padding: 20px;
+            color: #E2E5DE;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .sidebar img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #666;
+        }
+
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar li a {
+            text-decoration: none;
+            color: #E2E5DE;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .sidebar li a:hover {
+            background-color: #666;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 220px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .support-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .support-option {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .support-option img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .support-option a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .search-box input {
+            padding: 12px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .youtube-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .youtube-section a {
+            color: #0070c9;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .youtube-section a:hover {
+            text-decoration: underline;
+        }
+
+        .youtube-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px){
+            .support-options{
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <li><a href="index.html">Store</a></li>
+            <li><a href="Mac.html">Mac</a></li>
+            <li><a href="iPad.html">iPad</a></li>
+            <li><a href="iPhone.html">iPhone</a></li>
+            <li><a href="Watch.html">Watch</a></li>
+            <li><a href="AirPods.html">AirPods</a></li>
+            <li><a href="TV & Home.html">TV & Home</a></li>
+            <li><a href="Entertainment.html">Entertainment</a></li>
+            <li><a href="AirPods.html">Accessories</a></li>
+            <li><a href="Support.html">Support</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Apple Support</h1>
+            </ul>
+        </header>
+
+        <main>
+            <div class="support-options">
+                <div class="support-option">
+                    <img src="PASS.svg" alt="Forgot Password">
+                    <p><a href="FAAP.html">Forgot Apple Account password</a></p>
+                </div>
+                <div class="support-option">
+                    <img src="REPAIR.svg" alt="Apple Repair">
+                    <p><a href="AppleRepair.html">Apple Repair</a></p>
+                </div>
+                <div class="support-option">
+                    <img src="BILL.svg" alt="Billing">
+                    <p><a href="BS.html">Billing and subscriptions</a></p>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for more topics">
+            </div>
+
+            <div class="youtube-section">
+                <h2>Apple Support on YouTube</h2>
+                <p>Check out our official YouTube channel to get the most out of the latest features, devices, and services.</p>
+                <a href="https://www.youtube.com/applesupport">Visit Apple Support on YouTube</a>
+                <img  style="max-width: 100%; height: auto;" src="Accessories.png" alt="YouTube Video">
+            </div>
+        </main>
+    </div>
+    <script>
+        document.getElementById('search-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                let destination = '';
+
+                if (searchTerm.includes('forgot') || searchTerm.includes('forgot password')) {
+                    destination = 'FAAP.html';
+                } else if (searchTerm.includes('repair') || searchTerm.includes('repair')) {
+                    destination = 'AppleRepair.html';
+                } else if (searchTerm.includes('billing') || searchTerm.includes('billing') || searchTerm.includes('subscriptions')) {
+                    destination = 'BS.html';
+                } else {
+                    alert('No matching support option found. Please try a different search term.');
+                    return;
+                }
+
+                window.location.href = destination;
+            }
+        });
+    </script>
+</body>
+</html>
